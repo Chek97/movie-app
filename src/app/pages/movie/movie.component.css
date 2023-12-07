@@ -1,0 +1,11 @@
+.replay {
+    width: 300px;
+    overflow: scroll;
+}
+
+@media screen and (max-width: 500px) {
+    .replay {
+        width: 100%;
+        overflow: none;
+    }
+}

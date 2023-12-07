@@ -1,0 +1,34 @@
+<div class="container">
+  <header class="header">
+    <h1 class="main-title"> Movie App</h1>
+    <p>Select the movies online, watch trailers, add to your watchlist and more.</p>
+  </header>
+  <div class="landind-container">
+    <hr>
+    <h2 class="fw-bold mt-2 mb-4 fs-2">Movie's List</h2>
+    <div class="row">
+      <div class="col-xs-12 mb-3">
+        <button class="btn btn-success" (click)="getMoviesByName()">Sort by Name</button>
+      </div>
+      <div class="col-xs-12 mb-3">
+        <button class="btn btn-success" (click)="getMoviesByDate()">Sort by Release Date</button>
+      </div>
+      <div class="col-xs-12">
+        <div class="card mb-3" style="width: 18rem;" *ngFor="let movie of movies; index as i">
+          <img [src]="movie.image" class="card-img-top" [alt]="movie.title">
+          <div class="card-body">
+            <h5 class="card-title">{{movie.title}}</h5>
+            <p class="card-text">{{movie.releasedDate}}</p>
+            <a href="/movie?id={{movie.title}}" class="card-link btn btn-primary">More...</a>
+            <ng-container *ngIf="checkList(movie); else elseTemplate">
+              <span class="p-2 text-success fw-bold">Added to watchlist</span>
+            </ng-container>
+            <ng-template #elseTemplate>
+              <a href="#" class="card-link btn btn-outline-info" (click)="addToList(movie)">Add to watchlist</a>
+            </ng-template>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="container text-primary">
+    <div class="row">
+        <div class="col-xs-12 mt-4 mb-4">
+            <img [src]="movie.image" alt="" class="img img-thumbnail">
+        </div>
+        <header class="col-xs-12 mb-2">
+            <h1 class="fw-bold">{{movie.title}}</h1>
+        </header>
+        <div class="col-xs-12">
+            <h3 class="fw-bold fs-3">Description</h3>
+            <p>{{movie.description}}</p>
+            <p><strong>Rating: </strong>{{movie.rating}}</p>
+            <p><strong>Duration: </strong>{{movie.duration}}</p>
+            <p><strong>Release Date: </strong>{{movie.releasedDate}}</p>
+            <h3 class="fw-bold fs-3">Trailer</h3>
+            <div class="replay">
+                <youtube-player videoId="{{video}}"></youtube-player>
+            </div>
+        </div>
+    </div>
+</div>
